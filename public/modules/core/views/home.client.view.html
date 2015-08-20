@@ -1,0 +1,49 @@
+<section data-ng-controller="HomeController">
+	<div class="row">
+		<div class="col-xs-12" style="margin:5%;">
+			<div class="col-xs-4">
+				<h4>search by isbn:</h4>
+			</div>
+			<div class="col-xs-8">
+				<input ng-model="search_terms" ng-keypress="getSearchResults($event)" type="text" class="form-control" aria-label="...">
+			</div>
+		</div>
+
+		<div ng-show="books.length > 0" class="col-xs-12">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="playlist-header">
+							<div class="table-header">Title</div>
+						</th>
+						<th class="playlist-header">
+							<div class="table-header">Subtitle</div>
+						</th>
+						<th class="playlist-header">
+							<div class="table-header">Pages</div>
+						</th>
+						<th class="playlist-header">
+							<div class="table-header">URL</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="book in books" class="table-menu">
+						<td>{{book.title}}</td>
+						<td>{{book.subtitle}}</td>
+						<td>{{book.pages}}</td>
+						<td>
+							<a ng-href="{{book.url}}" class="glyphicon glyphicon-link" target="_blank"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div ng-show="error_dialog.show" class="col-xs-12">
+			<h3> Error requesting books from server. Please try again and make sure multiple ISBNs are comma-separated.</h3>
+		</div>
+	</div>
+
+
+</section>
