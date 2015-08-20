@@ -13,8 +13,7 @@ Furthermore, I decided to only handle ISBN-10 and ISBN-13 identification codes.
 ###Installation:
 1. Make sure bower, grunt, express, and mongo are installed on your machine
 2. In terminal, cd into the `confer-coding-task` directory
-3. Run the following:
-	`bower install`and `grunt build`
+3. Run `npm install`
 4. Open two more tabs in terminal, and run the `mongod` and `mongo` commands 
 5. In our first tab, run `grunt` and head over to `localhost:3000/#!/` in your browser of choice
 
